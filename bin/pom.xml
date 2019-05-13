@@ -9,15 +9,16 @@
 		<version>2.1.4.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>prepap-server</artifactId>
+	<groupId>api</groupId>
+	<artifactId>prepup-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>prepap-server</name>
-	<description>Server for PrepAp</description>
+	<name>prepup-server</name>
+	<description>Server for PrepUp</description>
 
 	<properties>
 		<java.version>1.8</java.version>
+		<start-class>api.PrepupServerApplication</start-class>
 	</properties>
 
 	

@@ -15,7 +15,7 @@ public class TipsController {
 		Connect();
 		return "";
 	}
-
+//bjasa
 
 	@GetMapping("/bycategory")
 	public String GetTipsFromCategory(@RequestParam(value="category") String category) {
