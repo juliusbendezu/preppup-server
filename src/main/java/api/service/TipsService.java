@@ -14,9 +14,6 @@ import api.repository.TipsRepository;
 public class TipsService {
 
 	@Autowired
-	private DataSource datasource;
-
-	@Autowired
 	private TipsRepository repository;
 
 	public List<Tip> getAll(){
