@@ -63,7 +63,7 @@
  		<repository>
  		<id>group04.repo</id>
  		<name>Group04 repo</name>
- 		<url>https://github.com/JWATSU/PVTGRUPP15.git</url>
+ 		<url>https://github.com/juliusbendezu/preppup-server.git</url>
  		</repository>
 	</distributionManagement>
 
