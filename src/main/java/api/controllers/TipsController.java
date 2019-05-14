@@ -22,4 +22,9 @@ public class TipsController {
 		return service.getAll();
 	}
 	
+	@GetMapping("/")
+	public String test() {
+		return "tipscontroller";
+	}
+	
 }
