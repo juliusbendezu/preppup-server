@@ -20,16 +20,12 @@ public class TipsService {
 	private TipsRepository repository;
 
 	public List<Tip> getAll(){
-		List<Tip> tips = new ArrayList<>();
-		tips.add(new Tip(1, "HAllå"));
-		tips.add(new Tip(2, "FOR FAEN"));
-		tips.add(new Tip(3, "Funkar detta?"));
-		return tips;
-		/*
+		
+		
 		List<Tip> tips = new ArrayList<>();
 		repository.findAll().forEach(tips::add);
 		return tips;
-		*/
+		
 	}
 	
 	public Tip getTipById(Integer id) {

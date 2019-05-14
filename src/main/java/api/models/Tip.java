@@ -13,11 +13,6 @@ public class Tip {
 	String description;
 	int category;
 	int creator_id;
-	
-	public Tip(int id, String title) {
-		this.id = id;
-		this.title = title;
-	}
 
 	public int getId() {
 		return id;
