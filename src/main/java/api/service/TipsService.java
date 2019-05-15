@@ -16,16 +16,23 @@ public class TipsService {
 
 	public List<Tip> getAll() {
 		List<Tip> tips = new ArrayList<>();
-		Iterable<Tip> iterable = repository.findAll();
-		System.out.println(iterable.iterator().hasNext());
+		repository.findAll().forEach(tips::add);
 		return tips;
 	}
 
 	public Tip getTipById(Integer id) {
 		return repository.findById(id).get();
 	}
+	
+	public List<Tip> getTipsByCreator(int creator_id){
+		return null;
+	}
 
 	public void addTip(Tip tip) {
+		repository.save(tip);
+	}
+	
+	public void updateTip(Tip tip) {
 		repository.save(tip);
 	}
 
