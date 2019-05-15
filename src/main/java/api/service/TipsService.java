@@ -18,7 +18,8 @@ public class TipsService {
 
 	public List<Tip> getAll() {
 		List<Tip> tips = new ArrayList<>();
-		repository.findAll().forEach(tips::add);
+		Iterable<Tip> iterable = repository.findAll();
+		System.out.println(iterable.iterator().hasNext());
 		return tips;
 	}
 
