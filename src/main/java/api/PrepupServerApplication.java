@@ -5,9 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@ComponentScan("api.controllers")
-@SpringBootApplication
+@EnableJpaRepositories("api.repository")
+@SpringBootApplication(scanBasePackages={
+"api.controllers", "api.models", "api.service", "api.repository"})
 public class PrepupServerApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
@@ -18,10 +20,4 @@ public class PrepupServerApplication extends SpringBootServletInitializer {
 	 protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
 	 return builder.sources(PrepupServerApplication.class);
 	 }
-	 
-	 // hola amigo igen
-	 // hej igen 
-	 
-	 //Syns den här?
-	 
 }

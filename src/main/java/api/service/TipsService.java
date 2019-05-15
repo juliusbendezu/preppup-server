@@ -12,16 +12,16 @@ import api.repository.TipsRepository;
 public class TipsService {
 
 	@Autowired
-	private TipsRepository repository;
+	private TipsRepository tipsRepository;
 
 	public List<Tip> getAll() {
 		List<Tip> tips = new ArrayList<>();
-		repository.findAll().forEach(tips::add);
+		tipsRepository.findAll().forEach(tips::add);
 		return tips;
 	}
 
-	public Tip getTipById(Integer id) {
-		return repository.findById(id).get();
+	public Tip getTipById(String id) {
+		return tipsRepository.findById(id).get();
 	}
 	
 	public List<Tip> getTipsByCreator(int creator_id){
@@ -29,15 +29,15 @@ public class TipsService {
 	}
 
 	public void addTip(Tip tip) {
-		repository.save(tip);
+		tipsRepository.save(tip);
 	}
 	
 	public void updateTip(Tip tip) {
-		repository.save(tip);
+		tipsRepository.save(tip);
 	}
 
-	public void deleteTip(Integer id) {
-		repository.deleteById(id);
+	public void deleteTip(String id) {
+		tipsRepository.deleteById(id);
 	}
 
 }

@@ -8,23 +8,27 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Tips")
+//@Table(name = "Tips")
 public class Tip {
 
+	
+	//@GeneratedValue
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private String id;
 
-	@Column(name = "title")
+	//@Column(name = "title")
 	private String title;
 	
-	@Column(name = "description")
+	//@Column(name = "description")
 	private String description;
 	
-	@Column(name = "category")
+	//@Column(name = "category")
 	private int category;
 	
-	@Column(name = "creator_id")
+	//@Column(name = "likes")
+	private int likes;
+
+	//@Column(name = "creator_id")
 	private int creator_id;
 	
 
@@ -32,20 +36,32 @@ public class Tip {
 		super();
 	}
 
-	public Tip(int id, String title, String description, int category, int creator_id) {
+	public Tip(String id, String title, String description, int category, int likes, int creator_id) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;
 		this.category = category;
+		this.likes = likes;
 		this.creator_id = creator_id;
 	}
+	
+	//Constructor to be called by request
+	public Tip(String title, String description, int category, int likes, int creator_id) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.category = category;
+		this.likes = likes;
+		this.creator_id = creator_id;
+	}
+	
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -71,6 +87,14 @@ public class Tip {
 
 	public void setCategory(int category) {
 		this.category = category;
+	}
+	
+	public int getLikes() {
+		return likes;
+	}
+
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
 
 	public int getCreator_id() {

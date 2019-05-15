@@ -1,4 +1,4 @@
-package api.models;
+/*package api.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -32,3 +32,4 @@ public class User {
 		this.username = username;
 	}
 }
+*/

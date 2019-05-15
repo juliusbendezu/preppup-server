@@ -1,5 +1,6 @@
 package api.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,8 @@ import api.service.TipsService;
 @RequestMapping("/tips")
 public class TipsController {
 
-	TipsService service = new TipsService();;
+	@Autowired
+	TipsService service;
 
 	@GetMapping("/all")
 	public List<Tip> getTips() {
@@ -27,7 +29,7 @@ public class TipsController {
 	}
 
 	@GetMapping("/{id}")
-	public Tip getTipById(@PathVariable int id) {
+	public Tip getTipById(@PathVariable String id) {
 		return service.getTipById(id);
 	}
 	
@@ -47,7 +49,7 @@ public class TipsController {
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteTip(@PathVariable int id) {
+	public void deleteTip(@PathVariable String id) {
 		service.deleteTip(id);
 	}
 
