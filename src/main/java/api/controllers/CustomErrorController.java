@@ -11,7 +11,7 @@ public class CustomErrorController implements ErrorController{
 	
 	@GetMapping(value = PATH)
 	public String error() {
-		return "Custom error";
+		return "There has been an error, check logs for details";
 	}
 	
 	@Override
