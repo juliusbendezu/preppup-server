@@ -1,18 +1,45 @@
 package api.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "Tips")
 public class Tip {
 
 	@Id
-	int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
-	String title;
-	String description;
-	int category;
-	int creator_id;
+	@Column(name = "title")
+	private String title;
+	
+	@Column(name = "description")
+	private String description;
+	
+	@Column(name = "category")
+	private int category;
+	
+	@Column(name = "creator_id")
+	private int creator_id;
+	
+
+	public Tip() {
+		super();
+	}
+
+	public Tip(int id, String title, String description, int category, int creator_id) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.category = category;
+		this.creator_id = creator_id;
+	}
 
 	public int getId() {
 		return id;

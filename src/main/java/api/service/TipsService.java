@@ -16,23 +16,22 @@ public class TipsService {
 	@Autowired
 	private TipsRepository repository;
 
-	public List<Tip> getAll(){
-		
-		
+	public List<Tip> getAll() {
+
 		List<Tip> tips = new ArrayList<>();
 		repository.findAll().forEach(tips::add);
 		return tips;
-		
+
 	}
-	
+
 	public Tip getTipById(Integer id) {
 		return repository.findById(id).get();
 	}
-	
+
 	public void addTip(Tip tip) {
 		repository.save(tip);
 	}
-	
+
 	public void deleteTip(Integer id) {
 		repository.deleteById(id);
 	}

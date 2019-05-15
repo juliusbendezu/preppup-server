@@ -13,18 +13,18 @@ import api.service.TipsService;
 @RestController
 @RequestMapping("/tips")
 public class TipsController {
-	
-	TipsService service; 
-			
+
+	TipsService service;
+
 	@GetMapping("/all")
-	public List<Tip> getTips(){
+	public List<Tip> getTips() {
 		service = new TipsService();
 		return service.getAll();
 	}
-	
+
 	@GetMapping("/")
 	public String test() {
 		return "tipscontroller";
 	}
-	
+
 }
