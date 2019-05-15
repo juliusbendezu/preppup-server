@@ -14,11 +14,10 @@ import api.service.TipsService;
 @RequestMapping("/tips")
 public class TipsController {
 
-	TipsService service;
+	TipsService service = new TipsService();;
 
 	@GetMapping("/all")
 	public List<Tip> getTips() {
-		service = new TipsService();
 		return service.getAll();
 	}
 

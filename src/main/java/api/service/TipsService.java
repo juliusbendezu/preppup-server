@@ -17,11 +17,9 @@ public class TipsService {
 	private TipsRepository repository;
 
 	public List<Tip> getAll() {
-
 		List<Tip> tips = new ArrayList<>();
 		repository.findAll().forEach(tips::add);
 		return tips;
-
 	}
 
 	public Tip getTipById(Integer id) {
