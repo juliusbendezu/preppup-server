@@ -16,67 +16,32 @@ public class Tip {
 	@Id
 	private int id;
 
-	//@Column(name = "title")
 	private String title;
 	
-	//@Column(name = "description")
 	private String description;
 	
-	//@Column(name = "category")
-	private boolean värme;
+	private boolean warmth;
 	
-	private boolean vatten;
+	private boolean water;
 	
-	private boolean skydd;
+	private boolean shelter;
 
-	private boolean mat;
+	private boolean food;
 	
-	private boolean sjukvård;
+	private boolean health;
 	
-	private boolean infosec;
+	private boolean security;
 	
-	//@Column(name = "likes")
+	private boolean storage;
+	
+	private boolean other;
+	
 	private int likes;
 
-	//@Column(name = "creator_id")
-	private int creator_id;
-	
+	private String creator;
 
 	public Tip() {
 		super();
-	}
-
-	public Tip(int id, String title, String description, 
-			boolean värme, boolean vatten, boolean skydd, boolean mat, boolean sjukvård, boolean infosec, 
-			int likes, int creator_id) {
-		super();	
-		this.id = id;
-		this.title = title;
-		this.description = description;
-		this.värme = värme;
-		this.vatten = vatten;
-		this.skydd = skydd;
-		this.mat = mat;
-		this.sjukvård = sjukvård;
-		this.infosec = infosec;
-		this.likes = likes;
-		this.creator_id = creator_id;
-	}
-	
-	//Constructor to be called by request (ID generates)
-	public Tip(String title, String description, boolean värme, boolean vatten, boolean skydd, boolean mat,
-			boolean sjukvård, boolean infosec, int likes, int creator_id) {
-		super();
-		this.title = title;
-		this.description = description;
-		this.värme = värme;
-		this.vatten = vatten;
-		this.skydd = skydd;
-		this.mat = mat;
-		this.sjukvård = sjukvård;
-		this.infosec = infosec;
-		this.likes = likes;
-		this.creator_id = creator_id;
 	}
 
 	public int getId() {
@@ -103,52 +68,70 @@ public class Tip {
 		this.description = description;
 	}
 
-	public boolean isVärme() {
-		return värme;
+	
+	
+	public boolean isWarmth() {
+		return warmth;
 	}
 
-	public void setVärme(boolean värme) {
-		this.värme = värme;
+	public void setWarmth(boolean warmth) {
+		this.warmth = warmth;
 	}
 
-	public boolean isVatten() {
-		return vatten;
+	public boolean isWater() {
+		return water;
 	}
 
-	public void setVatten(boolean vatten) {
-		this.vatten = vatten;
+	public void setWater(boolean water) {
+		this.water = water;
 	}
 
-	public boolean isSkydd() {
-		return skydd;
+	public boolean isShelter() {
+		return shelter;
 	}
 
-	public void setSkydd(boolean skydd) {
-		this.skydd = skydd;
+	public void setShelter(boolean shelter) {
+		this.shelter = shelter;
 	}
 
-	public boolean isMat() {
-		return mat;
+	public boolean isFood() {
+		return food;
 	}
 
-	public void setMat(boolean mat) {
-		this.mat = mat;
+	public void setFood(boolean food) {
+		this.food = food;
 	}
 
-	public boolean isSjukvård() {
-		return sjukvård;
+	public boolean isHealth() {
+		return health;
 	}
 
-	public void setSjukvård(boolean sjukvård) {
-		this.sjukvård = sjukvård;
+	public void setHealth(boolean health) {
+		this.health = health;
 	}
 
-	public boolean isInfosec() {
-		return infosec;
+	public boolean isSecurity() {
+		return security;
 	}
 
-	public void setInfosec(boolean infosec) {
-		this.infosec = infosec;
+	public void setSecurity(boolean security) {
+		this.security = security;
+	}
+
+	public boolean isStorage() {
+		return storage;
+	}
+
+	public void setStorage(boolean storage) {
+		this.storage = storage;
+	}
+
+	public boolean isOther() {
+		return other;
+	}
+
+	public void setOther(boolean other) {
+		this.other = other;
 	}
 	
 	public int getLikes() {
@@ -159,12 +142,12 @@ public class Tip {
 		this.likes = likes;
 	}
 
-	public int getCreator_id() {
-		return creator_id;
+	public String getCreator() {
+		return creator;
 	}
 
-	public void setCreator(int creator_id) {
-		this.creator_id = creator_id;
+	public void setCreator(String creator) {
+		this.creator = creator;
 	}
 
 }

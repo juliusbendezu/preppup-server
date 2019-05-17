@@ -24,7 +24,7 @@ public class TipsService {
 		return tipsRepository.findById(id).get();
 	}
 	
-	public List<Tip> getTipsByCreator(int creator_id){
+	public List<Tip> getTipsByCreator(String username){
 		return null;
 	}
 
@@ -42,18 +42,22 @@ public class TipsService {
 
 	public List<Tip> getTipsByCategory(int category) {
 		switch(category) {
+		case 0:
+			return tipsRepository.findWarmthTips();
 		case 1:
-			return tipsRepository.findVärmeTips();
+			return tipsRepository.findWaterTips();
 		case 2:
-			return tipsRepository.findVattenTips();
+			return tipsRepository.findShelterTips();
 		case 3:
-			return tipsRepository.findSkyddTips();
+			return tipsRepository.findFoodTips();
 		case 4:
-			return tipsRepository.findMatTips();
+			return tipsRepository.findHealthTips();
 		case 5:
-			return tipsRepository.findSjukvårdTips();
+			return tipsRepository.findSecurityTips();
 		case 6:
-			return tipsRepository.findInfosecTips();
+			return tipsRepository.findStorageTips();
+		case 7:
+			return tipsRepository.findOtherTips();
 		default:
 			throw new IllegalArgumentException("No such category, please use lowercase");
 		}

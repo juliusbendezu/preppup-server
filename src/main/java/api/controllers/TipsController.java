@@ -38,9 +38,9 @@ public class TipsController {
 		return service.getTipsByCategory(category);
 	}
 
-	@GetMapping("/by/{id}")
-	public List<Tip> getTipByCreator(@PathVariable int creator_id) {
-		return service.getTipsByCreator(creator_id);
+	@GetMapping("/by/{username}")
+	public List<Tip> getTipByCreator(@PathVariable String creator_username) {
+		return service.getTipsByCreator(creator_username);
 	}
 
 	@PostMapping("/add")
