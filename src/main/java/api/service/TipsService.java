@@ -20,7 +20,7 @@ public class TipsService {
 		return tips;
 	}
 
-	public Tip getTipById(String id) {
+	public Tip getTipById(int id) {
 		return tipsRepository.findById(id).get();
 	}
 	
@@ -36,7 +36,7 @@ public class TipsService {
 		tipsRepository.save(tip);
 	}
 
-	public void deleteTip(String id) {
+	public void deleteTip(int id) {
 		tipsRepository.deleteById(id);
 	}
 

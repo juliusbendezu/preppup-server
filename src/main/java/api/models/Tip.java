@@ -12,9 +12,9 @@ import javax.persistence.Table;
 public class Tip {
 
 	
-	//@GeneratedValue
+	@GeneratedValue
 	@Id
-	private String id;
+	private int id;
 
 	//@Column(name = "title")
 	private String title;
@@ -36,7 +36,7 @@ public class Tip {
 		super();
 	}
 
-	public Tip(String id, String title, String description, int category, int likes, int creator_id) {
+	public Tip(int id, String title, String description, int category, int likes, int creator_id) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -57,11 +57,11 @@ public class Tip {
 	}
 	
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

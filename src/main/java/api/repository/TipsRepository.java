@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository;
 import api.models.Tip;
 
 @Repository
-public interface TipsRepository extends JpaRepository<Tip, String> {
+public interface TipsRepository extends JpaRepository<Tip, Integer> {
 }

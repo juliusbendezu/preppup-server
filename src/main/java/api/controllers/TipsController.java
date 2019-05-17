@@ -29,7 +29,7 @@ public class TipsController {
 	}
 
 	@GetMapping("/{id}")
-	public Tip getTipById(@PathVariable String id) {
+	public Tip getTipById(@PathVariable int id) {
 		return service.getTipById(id);
 	}
 	
@@ -49,7 +49,7 @@ public class TipsController {
 	}
 
 	@DeleteMapping("/{id}")
-	public void deleteTip(@PathVariable String id) {
+	public void deleteTip(@PathVariable int id) {
 		service.deleteTip(id);
 	}
 
