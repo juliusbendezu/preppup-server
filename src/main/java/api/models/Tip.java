@@ -44,6 +44,41 @@ public class Tip {
 		super();
 	}
 
+	public Tip(int id, String title, String description, boolean warmth, boolean water, boolean shelter, boolean food,
+			boolean health, boolean security, boolean storage, boolean other, int likes, String creator) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.description = description;
+		this.warmth = warmth;
+		this.water = water;
+		this.shelter = shelter;
+		this.food = food;
+		this.health = health;
+		this.security = security;
+		this.storage = storage;
+		this.other = other;
+		this.likes = likes;
+		this.creator = creator;
+	}
+
+	public Tip(String title, String description, boolean warmth, boolean water, boolean shelter, boolean food,
+			boolean health, boolean security, boolean storage, boolean other, int likes, String creator) {
+		super();
+		this.title = title;
+		this.description = description;
+		this.warmth = warmth;
+		this.water = water;
+		this.shelter = shelter;
+		this.food = food;
+		this.health = health;
+		this.security = security;
+		this.storage = storage;
+		this.other = other;
+		this.likes = likes;
+		this.creator = creator;
+	}
+
 	public int getId() {
 		return id;
 	}
