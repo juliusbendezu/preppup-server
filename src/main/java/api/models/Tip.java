@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-//@Table(name = "Tips")
+@Table(name = "Tips")
 public class Tip {
 
 	
@@ -23,7 +23,17 @@ public class Tip {
 	private String description;
 	
 	//@Column(name = "category")
-	private int category;
+	private boolean värme;
+	
+	private boolean vatten;
+	
+	private boolean skydd;
+
+	private boolean mat;
+	
+	private boolean sjukvård;
+	
+	private boolean infosec;
 	
 	//@Column(name = "likes")
 	private int likes;
@@ -36,26 +46,38 @@ public class Tip {
 		super();
 	}
 
-	public Tip(int id, String title, String description, int category, int likes, int creator_id) {
-		super();
+	public Tip(int id, String title, String description, 
+			boolean värme, boolean vatten, boolean skydd, boolean mat, boolean sjukvård, boolean infosec, 
+			int likes, int creator_id) {
+		super();	
 		this.id = id;
 		this.title = title;
 		this.description = description;
-		this.category = category;
+		this.värme = värme;
+		this.vatten = vatten;
+		this.skydd = skydd;
+		this.mat = mat;
+		this.sjukvård = sjukvård;
+		this.infosec = infosec;
 		this.likes = likes;
 		this.creator_id = creator_id;
 	}
 	
-	//Constructor to be called by request
-	public Tip(String title, String description, int category, int likes, int creator_id) {
+	//Constructor to be called by request (ID generates)
+	public Tip(String title, String description, boolean värme, boolean vatten, boolean skydd, boolean mat,
+			boolean sjukvård, boolean infosec, int likes, int creator_id) {
 		super();
 		this.title = title;
 		this.description = description;
-		this.category = category;
+		this.värme = värme;
+		this.vatten = vatten;
+		this.skydd = skydd;
+		this.mat = mat;
+		this.sjukvård = sjukvård;
+		this.infosec = infosec;
 		this.likes = likes;
 		this.creator_id = creator_id;
 	}
-	
 
 	public int getId() {
 		return id;
@@ -81,12 +103,52 @@ public class Tip {
 		this.description = description;
 	}
 
-	public int getCategory() {
-		return category;
+	public boolean isVärme() {
+		return värme;
 	}
 
-	public void setCategory(int category) {
-		this.category = category;
+	public void setVärme(boolean värme) {
+		this.värme = värme;
+	}
+
+	public boolean isVatten() {
+		return vatten;
+	}
+
+	public void setVatten(boolean vatten) {
+		this.vatten = vatten;
+	}
+
+	public boolean isSkydd() {
+		return skydd;
+	}
+
+	public void setSkydd(boolean skydd) {
+		this.skydd = skydd;
+	}
+
+	public boolean isMat() {
+		return mat;
+	}
+
+	public void setMat(boolean mat) {
+		this.mat = mat;
+	}
+
+	public boolean isSjukvård() {
+		return sjukvård;
+	}
+
+	public void setSjukvård(boolean sjukvård) {
+		this.sjukvård = sjukvård;
+	}
+
+	public boolean isInfosec() {
+		return infosec;
+	}
+
+	public void setInfosec(boolean infosec) {
+		this.infosec = infosec;
 	}
 	
 	public int getLikes() {

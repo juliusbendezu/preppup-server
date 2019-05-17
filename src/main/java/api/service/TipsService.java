@@ -40,4 +40,23 @@ public class TipsService {
 		tipsRepository.deleteById(id);
 	}
 
+	public List<Tip> getTipsByCategory(int category) {
+		switch(category) {
+		case 1:
+			return tipsRepository.findVärmeTips();
+		case 2:
+			return tipsRepository.findVattenTips();
+		case 3:
+			return tipsRepository.findSkyddTips();
+		case 4:
+			return tipsRepository.findMatTips();
+		case 5:
+			return tipsRepository.findSjukvårdTips();
+		case 6:
+			return tipsRepository.findInfosecTips();
+		default:
+			throw new IllegalArgumentException("No such category, please use lowercase");
+		}
+		
+	}
 }
