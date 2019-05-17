@@ -33,10 +33,10 @@ public class TipsController {
 		return service.getTipById(id);
 	}
 
-	@GetMapping("/all/{category}")
-	public List<Tip> getTipByCategory(@PathVariable int category){
-		return service.getTipsByCategory(category);
-	}
+//	@GetMapping("/all/{category}")
+//	public List<Tip> getTipByCategory(@PathVariable int category){
+//		return service.getTipsByCategory(category);
+//	}
 
 	@GetMapping("/by/{id}")
 	public List<Tip> getTipByCreator(@PathVariable int creator_id) {

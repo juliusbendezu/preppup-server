@@ -13,21 +13,21 @@ import api.models.Tip;
 @Repository
 public interface TipsRepository extends JpaRepository<Tip, Integer> {
 
-	@Query(value = "SELECT * FROM TIPS WHERE värme = true", nativeQuery = true)
-	public List<Tip> findVärmeTips();
-	
-	@Query(value = "SELECT * FROM TIPS WHERE vatten = true", nativeQuery = true)
-	public List<Tip> findVattenTips();
-	
-	@Query(value = "SELECT * FROM TIPS WHERE skydd = true", nativeQuery = true)
-	public List<Tip> findSkyddTips();
-	
-	@Query(value = "SELECT * FROM TIPS WHERE mat = true", nativeQuery = true)
-	public List<Tip> findMatTips();
-	
-	@Query(value = "SELECT * FROM TIPS WHERE sjukvård = true", nativeQuery = true)
-	public List<Tip> findSjukvårdTips();
-	
-	@Query(value = "SELECT * FROM TIPS WHERE infosec = true", nativeQuery = true)
-	public List<Tip> findInfosecTips();
+//	@Query(value = "SELECT * FROM TIPS WHERE värme = true", nativeQuery = true)
+//	public List<Tip> findVärmeTips();
+//	
+//	@Query(value = "SELECT * FROM TIPS WHERE vatten = true", nativeQuery = true)
+//	public List<Tip> findVattenTips();
+//	
+//	@Query(value = "SELECT * FROM TIPS WHERE skydd = true", nativeQuery = true)
+//	public List<Tip> findSkyddTips();
+//	
+//	@Query(value = "SELECT * FROM TIPS WHERE mat = true", nativeQuery = true)
+//	public List<Tip> findMatTips();
+//	
+//	@Query(value = "SELECT * FROM TIPS WHERE sjukvård = true", nativeQuery = true)
+//	public List<Tip> findSjukvårdTips();
+//	
+//	@Query(value = "SELECT * FROM TIPS WHERE infosec = true", nativeQuery = true)
+//	public List<Tip> findInfosecTips();
 }
