@@ -3,10 +3,12 @@ package api.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import utilities.Capitalizer;
 
 @Entity
+@Table(name = "pantry_items")
 public class PantryItem {
 
 	@Id

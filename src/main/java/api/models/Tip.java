@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Tips")
+@Table(name = "tips")
 public class Tip implements Comparable<Tip> {
 
 	@GeneratedValue
