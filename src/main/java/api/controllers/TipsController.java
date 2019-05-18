@@ -48,7 +48,7 @@ public class TipsController {
 		service.addTip(tip);
 	}
 	
-	@PutMapping("/{id}/like")
+	@GetMapping("/{id}/like")
 	public void likeTip(@PathVariable int id) {
 		service.likeTip(id);
 	}
