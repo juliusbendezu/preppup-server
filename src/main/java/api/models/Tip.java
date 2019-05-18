@@ -7,33 +7,32 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Tips")
-public class Tip implements Comparable<Tip>{
+public class Tip implements Comparable<Tip> {
 
-	
 	@GeneratedValue
 	@Id
 	private int id;
 
 	private String title;
-	
+
 	private String description;
-	
+
 	private boolean warmth;
-	
+
 	private boolean water;
-	
+
 	private boolean shelter;
 
 	private boolean food;
-	
+
 	private boolean health;
-	
+
 	private boolean security;
-	
+
 	private boolean storage;
-	
+
 	private boolean other;
-	
+
 	private int likes;
 
 	private String creator;
@@ -164,13 +163,17 @@ public class Tip implements Comparable<Tip>{
 	public void setOther(boolean other) {
 		this.other = other;
 	}
-	
+
 	public int getLikes() {
 		return likes;
 	}
 
 	public void setLikes(int likes) {
 		this.likes = likes;
+	}
+
+	public void like() {
+		likes++;
 	}
 
 	public String getCreator() {

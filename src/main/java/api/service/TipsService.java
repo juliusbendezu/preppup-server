@@ -75,4 +75,10 @@ public class TipsService {
 		Collections.sort(tips);
 		return tips;
 	}
+
+	public void likeTip(int id) {
+		Tip tip = tipsRepository.findById(id).get();
+		tip.like();
+		tipsRepository.save(tip);
+	}
 }

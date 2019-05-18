@@ -47,6 +47,11 @@ public class TipsController {
 	public void addTip(@RequestBody Tip tip) {
 		service.addTip(tip);
 	}
+	
+	@PutMapping("/{id}/like")
+	public void likeTip(@PathVariable int id) {
+		service.likeTip(id);
+	}
 
 	@PutMapping("/update")
 	public void updateTip(@RequestBody Tip tip) {
