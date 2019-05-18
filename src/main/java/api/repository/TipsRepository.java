@@ -13,6 +13,11 @@ import api.models.Tip;
 @Repository
 public interface TipsRepository extends JpaRepository<Tip, Integer> {
 
+	/*
+	 * Find tips by categories, current list of categories:
+	 * "warmth, water, shelter, food, health, security, storage, other"
+	 */
+	
 	@Query(value = "SELECT * FROM TIPS WHERE warmth = true", nativeQuery = true)
 	public List<Tip> findWarmthTips();
 	
@@ -37,5 +42,12 @@ public interface TipsRepository extends JpaRepository<Tip, Integer> {
 	@Query(value = "SELECT * FROM TIPS WHERE other = true", nativeQuery = true)
 	public List<Tip> findOtherTips();
 	
+	
+	/*
+	 * Find all tips by creator 
+	 */
+	
+	@Query(value = "SELECT * FROM TIPS WHERE creator = :username", nativeQuery = true)
+	public List<Tip> findAllByCreator(@Param("username") String username);
 	
 }

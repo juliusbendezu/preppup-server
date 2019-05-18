@@ -58,7 +58,7 @@ public class TipsController {
 		service.updateTip(tip);
 	}
 
-	@DeleteMapping("/{id}")
+	@DeleteMapping("/delete/{id}")
 	public void deleteTip(@PathVariable int id) {
 		service.deleteTip(id);
 	}

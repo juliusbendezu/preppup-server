@@ -26,7 +26,7 @@ public class TipsService {
 	}
 	
 	public List<Tip> getTipsByCreator(String username){
-		return null;
+		return tipsRepository.findAllByCreator(username);
 	}
 
 	public void addTip(Tip tip) {
