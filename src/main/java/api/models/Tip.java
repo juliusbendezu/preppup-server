@@ -183,7 +183,7 @@ public class Tip implements Comparable<Tip>{
 
 	@Override
 	public int compareTo(Tip other) {
-		return Integer.compare(likes, other.likes);
+		return Integer.compare(other.likes, likes);
 	}
 
 }
