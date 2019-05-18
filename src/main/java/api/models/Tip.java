@@ -1,15 +1,13 @@
 package api.models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Tips")
-public class Tip {
+public class Tip implements Comparable<Tip>{
 
 	
 	@GeneratedValue
@@ -103,8 +101,6 @@ public class Tip {
 		this.description = description;
 	}
 
-	
-	
 	public boolean isWarmth() {
 		return warmth;
 	}
@@ -183,6 +179,11 @@ public class Tip {
 
 	public void setCreator(String creator) {
 		this.creator = creator;
+	}
+
+	@Override
+	public int compareTo(Tip other) {
+		return Integer.compare(likes, other.likes);
 	}
 
 }

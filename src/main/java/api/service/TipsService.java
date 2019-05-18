@@ -17,6 +17,7 @@ public class TipsService {
 	public List<Tip> getAll() {
 		List<Tip> tips = new ArrayList<>();
 		tipsRepository.findAll().forEach(tips::add);
+		Collections.sort(tips);
 		return tips;
 	}
 
@@ -41,26 +42,37 @@ public class TipsService {
 	}
 
 	public List<Tip> getTipsByCategory(int category) {
+		List<Tip> tips = new ArrayList<>();
 		switch(category) {
 		case 0:
-			return tipsRepository.findWarmthTips();
+			tips = tipsRepository.findWarmthTips();
+			break;
 		case 1:
-			return tipsRepository.findWaterTips();
+			tips = tipsRepository.findWaterTips();
+			break;
 		case 2:
-			return tipsRepository.findShelterTips();
+			tips = tipsRepository.findShelterTips();
+			break;
 		case 3:
-			return tipsRepository.findFoodTips();
+			tips = tipsRepository.findFoodTips();
+			break;
 		case 4:
-			return tipsRepository.findHealthTips();
+			tips = tipsRepository.findHealthTips();
+			break;
 		case 5:
-			return tipsRepository.findSecurityTips();
+			tips = tipsRepository.findSecurityTips();
+			break;
 		case 6:
-			return tipsRepository.findStorageTips();
+			tips = tipsRepository.findStorageTips();
+			break;
 		case 7:
-			return tipsRepository.findOtherTips();
+			tips = tipsRepository.findOtherTips();
+			break;
 		default:
 			throw new IllegalArgumentException("No such category, please use lowercase");
 		}
 		
+		Collections.sort(tips);
+		return tips;
 	}
 }
