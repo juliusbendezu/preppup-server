@@ -18,28 +18,28 @@ public interface TipsRepository extends JpaRepository<Tip, Integer> {
 	 * "warmth, water, shelter, food, health, security, storage, other"
 	 */
 	
-	@Query(value = "SELECT * FROM TIPS WHERE warmth = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE warmth = true", nativeQuery = true)
 	public List<Tip> findWarmthTips();
 	
-	@Query(value = "SELECT * FROM TIPS WHERE water = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE water = true", nativeQuery = true)
 	public List<Tip> findWaterTips();
 	
-	@Query(value = "SELECT * FROM TIPS WHERE shelter = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE shelter = true", nativeQuery = true)
 	public List<Tip> findShelterTips();
 	
-	@Query(value = "SELECT * FROM TIPS WHERE food = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE food = true", nativeQuery = true)
 	public List<Tip> findFoodTips();
 	
-	@Query(value = "SELECT * FROM TIPS WHERE health = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE health = true", nativeQuery = true)
 	public List<Tip> findHealthTips();
 	
-	@Query(value = "SELECT * FROM TIPS WHERE security = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE security = true", nativeQuery = true)
 	public List<Tip> findSecurityTips();
 	
-	@Query(value = "SELECT * FROM TIPS WHERE storage = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE storage = true", nativeQuery = true)
 	public List<Tip> findStorageTips();
 	
-	@Query(value = "SELECT * FROM TIPS WHERE other = true", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE other = true", nativeQuery = true)
 	public List<Tip> findOtherTips();
 	
 	
@@ -47,7 +47,7 @@ public interface TipsRepository extends JpaRepository<Tip, Integer> {
 	 * Find all tips by creator 
 	 */
 	
-	@Query(value = "SELECT * FROM TIPS WHERE creator = :username", nativeQuery = true)
+	@Query(value = "SELECT * FROM tips WHERE creator = :username", nativeQuery = true)
 	public List<Tip> findAllByCreator(@Param("username") String username);
 	
 }
