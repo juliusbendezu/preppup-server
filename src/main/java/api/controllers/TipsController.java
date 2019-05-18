@@ -34,7 +34,7 @@ public class TipsController {
 	}
 
 	@GetMapping("/all/{category}")
-	public List<Tip> getTipByCategory(@PathVariable int category){
+	public List<Tip> getTipByCategory(@PathVariable int category) {
 		return service.getTipsByCategory(category);
 	}
 
@@ -47,7 +47,7 @@ public class TipsController {
 	public void addTip(@RequestBody Tip tip) {
 		service.addTip(tip);
 	}
-	
+
 	@GetMapping("/{id}/like")
 	public void likeTip(@PathVariable int id) {
 		service.likeTip(id);

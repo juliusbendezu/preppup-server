@@ -24,15 +24,15 @@ public class TipsService {
 	public Tip getTipById(int id) {
 		return tipsRepository.findById(id).get();
 	}
-	
-	public List<Tip> getTipsByCreator(String username){
+
+	public List<Tip> getTipsByCreator(String username) {
 		return tipsRepository.findAllByCreator(username);
 	}
 
 	public void addTip(Tip tip) {
 		tipsRepository.save(tip);
 	}
-	
+
 	public void updateTip(Tip tip) {
 		tipsRepository.save(tip);
 	}
@@ -43,7 +43,7 @@ public class TipsService {
 
 	public List<Tip> getTipsByCategory(int category) {
 		List<Tip> tips = new ArrayList<>();
-		switch(category) {
+		switch (category) {
 		case 0:
 			tips = tipsRepository.findWarmthTips();
 			break;
@@ -71,7 +71,7 @@ public class TipsService {
 		default:
 			throw new IllegalArgumentException("No such category, please use lowercase");
 		}
-		
+
 		Collections.sort(tips);
 		return tips;
 	}

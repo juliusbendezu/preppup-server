@@ -7,14 +7,15 @@ import java.util.*;
 
 import api.models.PantryItem;
 import api.repository.PantryRepository;
+import utilities.Capitalizer;
 
 @Service
 public class PantryService {
 
 	@Autowired
 	PantryRepository pantryRepository;
-	
-	public List<PantryItem> getPantry(String user){
+
+	public List<PantryItem> getPantry(String user) {
 		return pantryRepository.getUserPantry(user);
 	}
 
@@ -26,5 +27,10 @@ public class PantryService {
 		List<PantryItem> pantries = new ArrayList<>();
 		pantryRepository.findAll().forEach(pantries::add);
 		return pantries;
+	}
+
+	public List<PantryItem> getItemsByCategory(String owner, String category) {
+		category = Capitalizer.capitalize(category);
+		return pantryRepository.getItemsByCategory(owner, category);
 	}
 }

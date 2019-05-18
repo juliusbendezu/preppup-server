@@ -23,9 +23,15 @@ public class PantryController {
 	public List<PantryItem> getPantries(){
 		return pantryService.getPantries();
 	}
+	
 	@GetMapping("/{user}")
 	public List<PantryItem> getPantry(@PathVariable String user){
 		return pantryService.getPantry(user);
+	}
+	
+	@GetMapping("/{user}/{category}")
+	public List<PantryItem> getItemsByCategory(@PathVariable String user, @PathVariable String category){
+		return pantryService.getItemsByCategory(user, category);
 	}
 	
 	@PostMapping("/add")

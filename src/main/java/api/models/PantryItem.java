@@ -22,9 +22,9 @@ public class PantryItem {
 	int carbs;
 	int protein;
 	String owner;
-	
+
 	public PantryItem() {
-		
+
 	}
 
 	// With ID
@@ -135,5 +135,5 @@ public class PantryItem {
 	public void setOwner(String owner) {
 		this.owner = owner;
 	}
-	
+
 }
