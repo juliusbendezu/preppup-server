@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import utilities.Capitalizer;
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -16,7 +18,7 @@ public class User {
 	}
 	
 	public User(String username) {
-		this.username = username;
+		this.username = Capitalizer.capitalize(username);
 	}
 
 	public String getUsername() {
