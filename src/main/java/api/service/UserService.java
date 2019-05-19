@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+
+import api.exceptions.UserNotFoundException;
 import api.models.User;
 import api.repository.UserRepository;
 
@@ -12,12 +14,17 @@ public class UserService {
 
 	@Autowired
 	UserRepository userRepository;
-	
-	public List<User> getAll(){
+
+	public List<User> getAll() {
 		return userRepository.findAll();
 	}
-	
+
 	public User getUser(String username) {
-		return (userRepository.findById(username)).get();
+		Optional<User> user = userRepository.findById(username);
+		if (!user.isPresent())
+			throw new UserNotFoundException();
+
+		return user.get();
+
 	}
 }

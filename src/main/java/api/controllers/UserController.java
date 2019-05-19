@@ -26,10 +26,7 @@ public class UserController {
 	
 	@GetMapping("/{username}")
 	public User getUser(@PathVariable("username") String username) {
-		User u = userService.getUser(username);
-		if(u == null)
-			throw new UserNotFoundException();
-		return u;
+		return userService.getUser(username);
 	}
 
 }
