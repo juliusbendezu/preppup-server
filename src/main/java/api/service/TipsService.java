@@ -15,8 +15,7 @@ public class TipsService {
 	private TipsRepository tipsRepository;
 
 	public List<Tip> getAll() {
-		List<Tip> tips = new ArrayList<>();
-		tipsRepository.findAll().forEach(tips::add);
+		List<Tip> tips = tipsRepository.findAll();
 		Collections.sort(tips);
 		return tips;
 	}

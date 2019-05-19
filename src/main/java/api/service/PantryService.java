@@ -24,8 +24,7 @@ public class PantryService {
 	}
 
 	public List<PantryItem> getPantries() {
-		List<PantryItem> pantries = new ArrayList<>();
-		pantryRepository.findAll().forEach(pantries::add);
+		List<PantryItem> pantries = pantryRepository.findAll();
 		return pantries;
 	}
 
