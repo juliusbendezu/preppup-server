@@ -1,5 +1,6 @@
 package api.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,7 +18,10 @@ public class PantryItem {
 
 	String name;
 	String category;
+	@Column(name = "expiry_date")
 	String expiryDate;
+	@Column(name = "generalCategory")
+	String generalCategory;
 	int amount;
 	int calories;
 	int fat;
@@ -29,13 +33,13 @@ public class PantryItem {
 
 	}
 
-	// With ID
-	public PantryItem(int id, String name, String category, String expiryDate, int amount, int calories, int fat,
-			int carbs, int protein, String owner) {
-		this.id = id;
+	// Without id
+	public PantryItem(String name, String category, String expiryDate, String generalCategory, int amount, int calories,
+			int fat, int carbs, int protein, String owner) {
 		this.name = Capitalizer.capitalize(name);
 		this.category = Capitalizer.capitalize(category);
 		this.expiryDate = expiryDate;
+		this.generalCategory = Capitalizer.capitalize(generalCategory);
 		this.amount = amount;
 		this.calories = calories;
 		this.fat = fat;
@@ -44,18 +48,11 @@ public class PantryItem {
 		this.owner = owner;
 	}
 
-	// Without ID
-	public PantryItem(String name, String category, String expiryDate, int amount, int calories, int fat, int carbs,
-			int protein, String owner) {
-		this.name = name;
-		this.category = category;
-		this.expiryDate = expiryDate;
-		this.amount = amount;
-		this.calories = calories;
-		this.fat = fat;
-		this.carbs = carbs;
-		this.protein = protein;
-		this.owner = owner;
+	// With id
+	public PantryItem(int id, String name, String category, String expiryDate, String generalCategory, int amount,
+			int calories, int fat, int carbs, int protein, String owner) {
+		this(name, category, expiryDate, generalCategory, amount, calories, fat, carbs, protein, owner);
+		this.id = id;
 	}
 
 	public int getId() {
@@ -88,6 +85,14 @@ public class PantryItem {
 
 	public void setExpiryDate(String expiryDate) {
 		this.expiryDate = expiryDate;
+	}
+
+	public String getGeneralCategory() {
+		return generalCategory;
+	}
+
+	public void setGeneralCategory(String generalCategory) {
+		this.generalCategory = generalCategory;
 	}
 
 	public int getAmount() {
