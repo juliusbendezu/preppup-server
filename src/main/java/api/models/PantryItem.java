@@ -20,7 +20,7 @@ public class PantryItem {
 	String category;
 	@Column(name = "expiry_date")
 	String expiryDate;
-	@Column(name = "generalCategory")
+	@Column(name = "general_category")
 	String generalCategory;
 	int amount;
 	int calories;
@@ -38,7 +38,7 @@ public class PantryItem {
 			int fat, int carbs, int protein, String owner) {
 		this.name = Capitalizer.capitalize(name);
 		this.category = Capitalizer.capitalize(category);
-		this.expiryDate = expiryDate;
+		this.expiryDate = expiryDate.isEmpty() ? "-" : expiryDate;
 		this.generalCategory = Capitalizer.capitalize(generalCategory);
 		this.amount = amount;
 		this.calories = calories;
@@ -51,6 +51,7 @@ public class PantryItem {
 	// With id
 	public PantryItem(int id, String name, String category, String expiryDate, String generalCategory, int amount,
 			int calories, int fat, int carbs, int protein, String owner) {
+		
 		this(name, category, expiryDate, generalCategory, amount, calories, fat, carbs, protein, owner);
 		this.id = id;
 	}
