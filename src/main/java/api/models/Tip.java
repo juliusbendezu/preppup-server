@@ -1,5 +1,6 @@
 package api.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,28 +14,40 @@ public class Tip implements Comparable<Tip> {
 	@Id
 	private int id;
 
+	@Column(name = "title")
 	private String title;
 
+	@Column(name = "description")
 	private String description;
 
+	@Column(name = "warmth")
 	private boolean warmth;
 
+	@Column(name = "water")
 	private boolean water;
 
+	@Column(name = "shelter")
 	private boolean shelter;
 
+	@Column(name = "food")
 	private boolean food;
 
+	@Column(name = "health")
 	private boolean health;
 
+	@Column(name = "security")
 	private boolean security;
 
+	@Column(name = "storage")
 	private boolean storage;
 
+	@Column(name = "other")
 	private boolean other;
 
+	@Column(name = "likes")
 	private int likes;
 
+	@Column(name = "creator")
 	private String creator;
 
 	public Tip() {

@@ -16,17 +16,17 @@ public class PantryItem {
 	@GeneratedValue
 	int id;
 
+	@Column(name = "name")
 	String name;
+	@Column(name = "category")
 	String category;
-	@Column(name = "expiry_date")
-	String expiryDate;
 	@Column(name = "general_category")
 	String generalCategory;
+	@Column(name = "expiry_date")
+	String expiryDate;
+	@Column(name = "amount")
 	int amount;
-	int calories;
-	int fat;
-	int carbs;
-	int protein;
+	@Column(name = "owner")
 	String owner;
 
 	public PantryItem() {
@@ -34,25 +34,18 @@ public class PantryItem {
 	}
 
 	// Without id
-	public PantryItem(String name, String category, String expiryDate, String generalCategory, int amount, int calories,
-			int fat, int carbs, int protein, String owner) {
+	public PantryItem(String name, String category, String generalCategory, String expiryDate, int amount, String owner) {
 		this.name = Capitalizer.capitalize(name);
 		this.category = Capitalizer.capitalize(category);
 		this.expiryDate = expiryDate.isEmpty() ? "-" : expiryDate;
 		this.generalCategory = Capitalizer.capitalize(generalCategory);
 		this.amount = amount;
-		this.calories = calories;
-		this.fat = fat;
-		this.carbs = carbs;
-		this.protein = protein;
 		this.owner = owner;
 	}
 
 	// With id
-	public PantryItem(int id, String name, String category, String expiryDate, String generalCategory, int amount,
-			int calories, int fat, int carbs, int protein, String owner) {
-		
-		this(name, category, expiryDate, generalCategory, amount, calories, fat, carbs, protein, owner);
+	public PantryItem(int id, String name, String category, String generalCategory, String expiryDate, int amount, String owner) {
+		this(name, category, generalCategory, expiryDate, amount, owner);
 		this.id = id;
 	}
 
@@ -79,6 +72,14 @@ public class PantryItem {
 	public void setCategory(String category) {
 		this.category = category;
 	}
+	
+	public String getGeneralCategory() {
+		return generalCategory;
+	}
+
+	public void setGeneralCategory(String generalCategory) {
+		this.generalCategory = generalCategory;
+	}
 
 	public String getExpiryDate() {
 		return expiryDate;
@@ -88,52 +89,12 @@ public class PantryItem {
 		this.expiryDate = expiryDate;
 	}
 
-	public String getGeneralCategory() {
-		return generalCategory;
-	}
-
-	public void setGeneralCategory(String generalCategory) {
-		this.generalCategory = generalCategory;
-	}
-
 	public int getAmount() {
 		return amount;
 	}
 
 	public void setAmount(int amount) {
 		this.amount = amount;
-	}
-
-	public int getCalories() {
-		return calories;
-	}
-
-	public void setCalories(int calories) {
-		this.calories = calories;
-	}
-
-	public int getFat() {
-		return fat;
-	}
-
-	public void setFat(int fat) {
-		this.fat = fat;
-	}
-
-	public int getCarbs() {
-		return carbs;
-	}
-
-	public void setCarbs(int carbs) {
-		this.carbs = carbs;
-	}
-
-	public int getProtein() {
-		return protein;
-	}
-
-	public void setProtein(int protein) {
-		this.protein = protein;
 	}
 
 	public String getOwner() {
