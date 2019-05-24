@@ -17,9 +17,6 @@ public class Tip implements Comparable<Tip> {
 	@Column(name = "title")
 	private String title;
 
-	@Column(name = "description")
-	private String description;
-
 	@Column(name = "warmth")
 	private boolean warmth;
 
@@ -43,6 +40,10 @@ public class Tip implements Comparable<Tip> {
 
 	@Column(name = "other")
 	private boolean other;
+	
+
+	@Column(name = "description")
+	private String description;
 
 	@Column(name = "likes")
 	private int likes;
@@ -54,12 +55,11 @@ public class Tip implements Comparable<Tip> {
 		super();
 	}
 
-	public Tip(int id, String title, String description, boolean warmth, boolean water, boolean shelter, boolean food,
-			boolean health, boolean security, boolean storage, boolean other, int likes, String creator) {
+	public Tip(int id, String title, boolean warmth, boolean water, boolean shelter, boolean food,
+			boolean health, boolean security, boolean storage, boolean other, String description, int likes, String creator) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.description = description;
 		this.warmth = warmth;
 		this.water = water;
 		this.shelter = shelter;
@@ -68,15 +68,15 @@ public class Tip implements Comparable<Tip> {
 		this.security = security;
 		this.storage = storage;
 		this.other = other;
+		this.description = description;
 		this.likes = likes;
 		this.creator = creator;
 	}
 
-	public Tip(String title, String description, boolean warmth, boolean water, boolean shelter, boolean food,
-			boolean health, boolean security, boolean storage, boolean other, int likes, String creator) {
+	public Tip(String title, boolean warmth, boolean water, boolean shelter, boolean food,
+			boolean health, boolean security, boolean storage, boolean other, String description, int likes, String creator) {
 		super();
 		this.title = title;
-		this.description = description;
 		this.warmth = warmth;
 		this.water = water;
 		this.shelter = shelter;
@@ -85,6 +85,7 @@ public class Tip implements Comparable<Tip> {
 		this.security = security;
 		this.storage = storage;
 		this.other = other;
+		this.description = description;
 		this.likes = likes;
 		this.creator = creator;
 	}
@@ -103,14 +104,6 @@ public class Tip implements Comparable<Tip> {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
 	}
 
 	public boolean isWarmth() {
@@ -175,6 +168,14 @@ public class Tip implements Comparable<Tip> {
 
 	public void setOther(boolean other) {
 		this.other = other;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public int getLikes() {
