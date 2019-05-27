@@ -50,6 +50,7 @@ public class PantryController {
 		addPantryItem(pantryItem);
 	}
 	
+	@ResponseStatus(HttpStatus.ACCEPTED)
 	@DeleteMapping("/delete/{id}")
 	public void deletePantryItem(@PathVariable int id) {
 		pantryService.deleteItemById(id);

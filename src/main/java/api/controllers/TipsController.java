@@ -56,11 +56,13 @@ public class TipsController {
 		service.likeTip(id);
 	}
 
+	@ResponseStatus(HttpStatus.ACCEPTED)
 	@PutMapping("/update")
 	public void updateTip(@RequestBody Tip tip) {
 		service.updateTip(tip);
 	}
 
+	@ResponseStatus(HttpStatus.ACCEPTED)
 	@DeleteMapping("/delete/{id}")
 	public void deleteTip(@PathVariable int id) {
 		service.deleteTip(id);
