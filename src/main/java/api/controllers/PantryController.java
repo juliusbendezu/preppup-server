@@ -50,7 +50,7 @@ public class PantryController {
 		addPantryItem(pantryItem);
 	}
 	
-	@DeleteMapping("/{id}/delete")
+	@DeleteMapping("/delete/{id}")
 	public void deletePantryItem(@PathVariable int id) {
 		pantryService.deleteItemById(id);
 	}
