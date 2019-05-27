@@ -32,4 +32,8 @@ public class PantryService {
 		category = Capitalizer.capitalize(category);
 		return pantryRepository.getItemsByCategory(owner, category);
 	}
+	
+	public void deleteItemById(int id) {
+		pantryRepository.deleteById(id);
+	}
 }

@@ -2,6 +2,7 @@ package api.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,7 +46,12 @@ public class PantryController {
 
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	@PutMapping("/update")
-	public void updatePantry(@RequestBody PantryItem pantryItem) {
+	public void updatePantryItem(@RequestBody PantryItem pantryItem) {
 		addPantryItem(pantryItem);
+	}
+	
+	@DeleteMapping("/{id}/delete")
+	public void deletePantryItem(@PathVariable int id) {
+		pantryService.deleteItemById(id);
 	}
 }
